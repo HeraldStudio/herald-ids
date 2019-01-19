@@ -1,0 +1,21 @@
+{
+  "name": "herald-ids",
+  "version": "1.0.0",
+  "description": "小猴偷米身份认证中间服务",
+  "author": "Wolf-Tungsten",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cross-env": "^5.2.0",
+    "nuxt": "^2.3.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
