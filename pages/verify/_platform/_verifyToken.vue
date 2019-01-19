@@ -51,6 +51,7 @@ export default {
         this.timeRemain = this.timeRemain - 1
       } else {
         this.$router.replace(`/return/${this.platform}`)
+        clearInterval(timer)
       }
     }, 1000)
   }
