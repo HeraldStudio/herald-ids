@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <div>
-      <img class="logo" src="认证服务标示-失败.jpg"/>
+      <img class="logo" src="/认证服务标示-失败.jpg"/>
       <h1 class="title">
         出错了
       </h1>
