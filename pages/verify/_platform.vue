@@ -10,11 +10,11 @@
         {{this.success ? '将自动返回正常页面（如果没有自动跳转请点击下方按钮）':'认证过程出现错误，即将返回重试'}}
       </h2>
       <div class="links">
-        <a
-          href="https://myseu.cn/"
+        <div
+          @click.stop="redirect"
           target="_blank"
           class="button--green"
-        >点击跳转（{{this.timeRemain}}）</a>
+        >点击跳转（{{this.timeRemain}}）</div>
       </div>
     </div>
   </section>
@@ -29,9 +29,8 @@ export default {
   components: {
   },
   async asyncData(context){
-    let {platform, verifyToken} = context.params
-    let res = await axios.post('https://myseu.cn/ws3/token/activate',{platform, verifyToken})
-    return {platform, success:res.data.success, timeRemain:5}
+    let {platform} = context.params
+    return {platform, success:true, timeRemain:5}
   },
   data(){
     return{
@@ -54,6 +53,11 @@ export default {
         clearInterval(timer)
       }
     }, 1000)
+  },
+  methods:{
+    redirect(){
+       this.$router.replace(`/return/${this.platform}`)
+    }
   }
 }
 </script>
